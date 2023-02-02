@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Calculatrice</title>
+      <link rel="stylesheet" href="assets/style/css/style.css">
+    </head>
+    <body>
+        <main>
+            <h2>Résultat :</h2>
+            <h3><?php 
+            if(isset($result)){
+                echo($result);
+                echo '</br>';
+                echo($result_surface);
+            }else{
+                echo "Aucune opération n'est demandé";
+            }
+            ?></h3>
+            <form method="POST" action="index.php">
+                <fieldset>
+                    <label for="nb1">Choix du premier chiffre ou nombre : </label>
+                    <input type="text" name="nb1"/>
+                </fieldset>
+                <fieldset>
+                    <label for="nb2">Choix du deuxième chiffre ou nombre : </label>
+                    <input type="text" name="nb2"/>
+                </fieldset>
+                <fieldset>
+                    <select name="calcul" id="calcul">
+                        <option name=""value="">Valeur vide</option>
+                        <option name="multiply"value="multiply">Multiplication</option>
+                        <option name="divide"value="divide">Division</option>
+                        <option name="add"value="add">Addition</option>
+                        <option name="substract"value="substract">Soustraction</option>
+                        <option name="modulo"value="modulo">Modulo</option>
+                        <option name="power" value="power">Puissance</option>
+                        <option name='factorial' value='factorial'>Factoriel</option>
+                    </select>
+                    <select name="calcul_surface" id="calcul_surface">
+                        <option name=""value="">Valeur vide</option>
+                        <option name="rectangle_surface" value="rectangle_surface">Surface d'un rectangle</option>
+                        <option name="rectangle_triangle_surface" value="rectangle_triangle_surface">Surface d'un triangle rectangle</option>
+                        <option name="basic_triangle_surface" value="basic_triangle_surface">Surface d'un triangle basic</option>
+                        <option name="disk_surface" value="disk_surface">Surface d'un disque</option>
+                    </select>
+                </fieldset>
+                <button>Calculer</button>
+            </form>
+        </main>
+    </body>
+</html>
